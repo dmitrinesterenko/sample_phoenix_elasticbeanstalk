@@ -1,0 +1,22 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_customer_gateway.main" [label = "aws_customer_gateway.main", shape = "box"]
+		"[root] aws_eip.ip" [label = "aws_eip.ip", shape = "box"]
+		"[root] aws_instance.dmitri_co" [label = "aws_instance.dmitri_co", shape = "box"]
+		"[root] aws_instance.qa_dmitri_co" [label = "aws_instance.qa_dmitri_co", shape = "box"]
+		"[root] aws_internet_gateway.gw" [label = "aws_internet_gateway.gw", shape = "box"]
+		"[root] aws_subnet.main" [label = "aws_subnet.main", shape = "box"]
+		"[root] aws_vpc.main" [label = "aws_vpc.main", shape = "box"]
+		"[root] provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] aws_customer_gateway.main" -> "[root] provider.aws"
+		"[root] aws_eip.ip" -> "[root] aws_instance.dmitri_co"
+		"[root] aws_instance.dmitri_co" -> "[root] aws_subnet.main"
+		"[root] aws_instance.qa_dmitri_co" -> "[root] provider.aws"
+		"[root] aws_internet_gateway.gw" -> "[root] aws_vpc.main"
+		"[root] aws_subnet.main" -> "[root] aws_vpc.main"
+		"[root] aws_vpc.main" -> "[root] provider.aws"
+	}
+}
+

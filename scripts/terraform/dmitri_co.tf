@@ -52,6 +52,15 @@ resource "aws_instance" "dmitri_co" {
   }
 }
 
+resource "aws_instance" "qa_dmitri_co" {
+  ami = "ami-408c7f28"
+  instance_type = "t1.micro"
+  tags {
+    Environment = "QA"
+    Product = "Main Website"
+  }
+}
+
 resource "aws_eip" "ip" {
   instance = "${aws_instance.dmitri_co.id}"
   vpc = true
