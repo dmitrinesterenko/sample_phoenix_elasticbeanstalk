@@ -1,0 +1,121 @@
+2016/01/01 03:51:48 [INFO] Terraform version: 0.6.8  f1f214f03df27c1a790980b6f050fe92a7a547bf
+2016/01/01 03:51:48 [DEBUG] Detected home directory from env var: /home/dmitri
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: atlas = /usr/lib/terraform/terraform-provider-atlas
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: aws = /usr/lib/terraform/terraform-provider-aws
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: azure = /usr/lib/terraform/terraform-provider-azure
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: cloudflare = /usr/lib/terraform/terraform-provider-cloudflare
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: cloudstack = /usr/lib/terraform/terraform-provider-cloudstack
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: consul = /usr/lib/terraform/terraform-provider-consul
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: digitalocean = /usr/lib/terraform/terraform-provider-digitalocean
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: dme = /usr/lib/terraform/terraform-provider-dme
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: dnsimple = /usr/lib/terraform/terraform-provider-dnsimple
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: docker = /usr/lib/terraform/terraform-provider-docker
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: dyn = /usr/lib/terraform/terraform-provider-dyn
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: google = /usr/lib/terraform/terraform-provider-google
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: heroku = /usr/lib/terraform/terraform-provider-heroku
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: mailgun = /usr/lib/terraform/terraform-provider-mailgun
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: null = /usr/lib/terraform/terraform-provider-null
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: openstack = /usr/lib/terraform/terraform-provider-openstack
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: packet = /usr/lib/terraform/terraform-provider-packet
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: rundeck = /usr/lib/terraform/terraform-provider-rundeck
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: statuscake = /usr/lib/terraform/terraform-provider-statuscake
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: template = /usr/lib/terraform/terraform-provider-template
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: terraform = /usr/lib/terraform/terraform-provider-terraform
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: tls = /usr/lib/terraform/terraform-provider-tls
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: vsphere = /usr/lib/terraform/terraform-provider-vsphere
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: chef = /usr/lib/terraform/terraform-provisioner-chef
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: file = /usr/lib/terraform/terraform-provisioner-file
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: local-exec = /usr/lib/terraform/terraform-provisioner-local-exec
+2016/01/01 03:51:48 [DEBUG] Discovered plugin: remote-exec = /usr/lib/terraform/terraform-provisioner-remote-exec
+2016/01/01 03:51:48 [DEBUG] Detected home directory from env var: /home/dmitri
+2016/01/01 03:51:48 [DEBUG] Attempting to open CLI config file: /home/dmitri/.terraformrc
+2016/01/01 03:51:48 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2016/01/01 03:51:48 [DEBUG] Detected home directory from env var: /home/dmitri
+2016/01/01 03:51:48 [DEBUG] waiting for all plugin processes to complete...
+panic: runtime error: index out of range
+
+goroutine 1 [running]:
+github.com/hashicorp/hcl/hcl/parser.(*Parser).objectItem(0xc82011d018, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:154 +0x423
+github.com/hashicorp/hcl/hcl/parser.(*Parser).objectList(0xc82011d018, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:69 +0xc1
+github.com/hashicorp/hcl/hcl/parser.(*Parser).objectType(0xc82011d018, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:241 +0xf1
+github.com/hashicorp/hcl/hcl/parser.(*Parser).objectItem(0xc82011d018, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:146 +0x1fc
+github.com/hashicorp/hcl/hcl/parser.(*Parser).objectList(0xc82011d018, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:69 +0xc1
+github.com/hashicorp/hcl/hcl/parser.(*Parser).Parse(0xc82011d018, 0xc8200ab6c0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:52 +0x100
+github.com/hashicorp/hcl/hcl/parser.Parse(0xc82016e2d0, 0xe9, 0xf0, 0xc82016e2d0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/hcl/parser/parser.go:39 +0x185
+github.com/hashicorp/hcl.Parse(0xc82016e1e0, 0xe9, 0xe9, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/hcl/parse.go:17 +0x89
+github.com/hashicorp/terraform/config.loadFileHcl(0xc820017d10, 0x4b, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/config/loader_hcl.go:155 +0x2d6
+github.com/hashicorp/terraform/config.loadTree(0xc820017d10, 0x4b, 0xc82011d418, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/config/import_tree.go:47 +0x313
+github.com/hashicorp/terraform/config.LoadFile(0xc820017d10, 0x4b, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/config/loader.go:39 +0x3b
+github.com/hashicorp/terraform/config.LoadDir(0xc8200160a4, 0x3e, 0x10, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/config/loader.go:91 +0x38c
+github.com/hashicorp/terraform/config/module.NewTreeModule(0x0, 0x0, 0xc8200160a4, 0x3e, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/config/module/tree.go:40 +0x41
+github.com/hashicorp/terraform/command.(*Meta).Context(0xc82016e0f0, 0xc8200160a4, 0x3e, 0xf6c660, 0x11, 0x0, 0xa, 0x4, 0x7fa3266b2000, 0x0, ...)
+	/opt/gopath/src/github.com/hashicorp/terraform/command/meta.go:148 +0x509
+github.com/hashicorp/terraform/command.(*PlanCommand).Run(0xc82016e0f0, 0xc82000a490, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/command/plan.go:66 +0x80c
+github.com/mitchellh/cli.(*CLI).Run(0xc8201516b0, 0xc82017a480, 0x0, 0x0)
+	/opt/gopath/src/github.com/mitchellh/cli/cli.go:112 +0x655
+main.wrappedMain(0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/main.go:146 +0xb08
+main.realMain(0x0)
+	/opt/gopath/src/github.com/hashicorp/terraform/main.go:82 +0xa88
+main.main()
+	/opt/gopath/src/github.com/hashicorp/terraform/main.go:18 +0x18
+
+goroutine 5 [syscall]:
+os/signal.loop()
+	/usr/local/go/src/os/signal/signal_unix.go:22 +0x18
+created by os/signal.init.1
+	/usr/local/go/src/os/signal/signal_unix.go:28 +0x37
+
+goroutine 7 [runnable]:
+encoding/json.(*decodeState).literalStore(0xc8201a2028, 0xc8201a6065, 0x25, 0x19b, 0xb83f40, 0xc8201a0028, 0xd8, 0x0)
+	/usr/local/go/src/encoding/json/decode.go:762 +0x1552
+encoding/json.(*decodeState).literal(0xc8201a2028, 0xb83f40, 0xc8201a0028, 0xd8)
+	/usr/local/go/src/encoding/json/decode.go:646 +0xe9
+encoding/json.(*decodeState).value(0xc8201a2028, 0xb83f40, 0xc8201a0028, 0xd8)
+	/usr/local/go/src/encoding/json/decode.go:299 +0x397
+encoding/json.(*decodeState).object(0xc8201a2028, 0xe0be40, 0xc8201a0000, 0xd9)
+	/usr/local/go/src/encoding/json/decode.go:613 +0x1163
+encoding/json.(*decodeState).value(0xc8201a2028, 0xb34580, 0xc8201a0000, 0x16)
+	/usr/local/go/src/encoding/json/decode.go:296 +0x3bd
+encoding/json.(*decodeState).unmarshal(0xc8201a2028, 0xb34580, 0xc8201a0000, 0x0, 0x0)
+	/usr/local/go/src/encoding/json/decode.go:157 +0x196
+encoding/json.(*Decoder).Decode(0xc8201a2000, 0xb34580, 0xc8201a0000, 0x0, 0x0)
+	/usr/local/go/src/encoding/json/stream.go:67 +0x274
+github.com/hashicorp/go-checkpoint.checkResult(0x7fa326506298, 0xc82019c000, 0xc82019c000, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/go-checkpoint/checkpoint.go:280 +0xc5
+github.com/hashicorp/go-checkpoint.Check(0xc820069f10, 0x0, 0x0, 0x0)
+	/opt/gopath/src/github.com/hashicorp/go-checkpoint/checkpoint.go:107 +0x209
+main.runCheckpoint(0xc8200f1820)
+	/opt/gopath/src/github.com/hashicorp/terraform/checkpoint.go:51 +0x412
+created by main.wrappedMain
+	/opt/gopath/src/github.com/hashicorp/terraform/main.go:99 +0x41c
+
+goroutine 8 [semacquire]:
+sync.runtime_Syncsemacquire(0xc82012a400)
+	/usr/local/go/src/runtime/sema.go:237 +0x201
+sync.(*Cond).Wait(0xc82012a3f0)
+	/usr/local/go/src/sync/cond.go:62 +0x9b
+io.(*pipe).read(0xc82012a3c0, 0xc82017d000, 0x1000, 0x1000, 0x0, 0x0, 0x0)
+	/usr/local/go/src/io/pipe.go:52 +0x2d2
+io.(*PipeReader).Read(0xc820030150, 0xc82017d000, 0x1000, 0x1000, 0x0, 0x0, 0x0)
+	/usr/local/go/src/io/pipe.go:134 +0x50
+bufio.(*Scanner).Scan(0xc82009a900, 0x0)
+	/usr/local/go/src/bufio/scan.go:180 +0x877
+github.com/hashicorp/terraform/command.(*Meta).flagSet.func1(0xc82009a900, 0xc82016e0f0)
+	/opt/gopath/src/github.com/hashicorp/terraform/command/meta.go:323 +0x25
+created by github.com/hashicorp/terraform/command.(*Meta).flagSet
+	/opt/gopath/src/github.com/hashicorp/terraform/command/meta.go:326 +0x5d5
