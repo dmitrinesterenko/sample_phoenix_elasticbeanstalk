@@ -39,5 +39,5 @@ config :sample_phoenix, SamplePhoenix.Repo,
   username: "postgres",
   password: "postgres",
   database: "sample_phoenix_dev",
-  hostname: "localhost",
+  hostname: "db",
   pool_size: 10

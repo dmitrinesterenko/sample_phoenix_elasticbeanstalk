@@ -15,5 +15,5 @@ config :sample_phoenix, SamplePhoenix.Repo,
   username: "postgres",
   password: "postgres",
   database: "sample_phoenix_test",
-  hostname: "localhost",
+  hostname: "db",
   pool: Ecto.Adapters.SQL.Sandbox

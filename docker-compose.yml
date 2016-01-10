@@ -1,0 +1,16 @@
+app:
+  build: .
+  volumes:
+    - .:/webapp/current
+  working_dir: /webapp/current
+  command: 'scripts/docker/entrypoint.sh'
+  ports:
+    - '4000:4000'
+  links:
+    - db
+db:
+  image: postgres:9.4
+  environment:
+    POSTGRES_USER: 'phoenix_blog'
+  ports:
+    - '5432'
