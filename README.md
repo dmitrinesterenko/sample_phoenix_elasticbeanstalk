@@ -1,4 +1,4 @@
-# SamplePhoenix
+# Sample Application
 
 To start your Phoenix app:
 
@@ -11,22 +11,24 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
 ## Deploy to AWS
-### Create
-* create-group_deploy.sh
-* attach-group-policy_elasticbeanstalk-fulllaccess.sh
-* create-user_deploy.sh
-* create_aws-elasticbeanstalk-ec2-role.sh
-* create-instance-profile_elasticbeanstalk-ec2-role.sh
-* add-role-to-instance-profile_elasticbeanstalk-ec2-role.sh
-* create_aws-elasticbeanstalk-service-monitoring-policy.sh
-* create_aws-elasticbeanstalk-service-role.sh
-* attach_elasticbeanstalk-service-monitoring-policy.sh
+Install [JQ](https://stedolan.github.io/jq/) to enable JSON parsing that is used
+to get results between AWS commands.
 
+In Debian and Ubuntu distributions
+```sh
+sudo apt-get install jq
+```
+
+Source the AWS commands
+```sh
+source ./scripts/iam/commands.sh
+```
+
+### Create
+aws_up
 ### Destroy
-* remove-user-from-group_deploy_deploy.sh
-* delete-group_deploy.sh
-* delete-user_deploy.sh
-* detach-group-policy_elasticbeanstalk-fullaccess.sh
+aws_down
+
 ## Learn more
 
   * Official website: http://www.phoenixframework.org/
