@@ -1,5 +1,8 @@
 #!/bin/bash
 function set_dir(){
+  if [ "$AWS_SCRIPTS_DIRECTORY" = "" ]; then
+    echo "You did not set the variable for AWS_SCRIPTS_DIRECTORY"
+  fi
   cd $AWS_SCRIPTS_DIRECTORY
   pwd
 }
