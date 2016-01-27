@@ -23,7 +23,3 @@ erl_crash.dump
 # variables.
 /config/prod.secret.exs
 
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
