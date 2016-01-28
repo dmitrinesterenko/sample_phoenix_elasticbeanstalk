@@ -1,11 +1,18 @@
 #!/bin/bash
 function set_dir(){
+  CURRENT_DIR=`pwd`
   if [ "$AWS_SCRIPTS_DIRECTORY" = "" ]; then
     echo "You did not set the variable for AWS_SCRIPTS_DIRECTORY"
+    AWS_SCRIPTS_DIRECTORY="scripts/aws/iam"
   fi
   cd $AWS_SCRIPTS_DIRECTORY
   pwd
 }
+
+function reset_dir(){
+  cd $CURRENT_DIR
+}
+
 function aws_up(){
   set_dir
  ./create-group_deploy.sh
@@ -18,6 +25,7 @@ function aws_up(){
  ./create-policy-elasticbeanstalk-service-monitoring.sh
  ./create-role-elasticbeanstalk-service.sh
  ./attach-role-policy-elasticbeanstalk-service-monitoring.sh
+  reset_dir
 }
 
 function aws_down(){
