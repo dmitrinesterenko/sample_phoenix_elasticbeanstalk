@@ -1,13 +1,11 @@
 branch-defaults:
-  aws-elasticbeanstalk-scripts:
-    environment: sample-phoenix-dev
-  master:
-    environment: sample-phoenix-dev
+  clarify-directory-readme:
+    environment: blog-qa
     group_suffix: null
 global:
   application_name: sample_phoenix
-  default_ec2_keyname: aws-eb
-  default_platform: Docker 1.7.1
-  default_region: us-west-2
+  default_ec2_keyname: null
+  default_platform: Docker
+  default_region: us-east-1
   profile: null
   sc: git

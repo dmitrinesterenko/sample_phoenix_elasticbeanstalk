@@ -2,7 +2,7 @@
 Install [JQ](https://stedolan.github.io/jq/) to enable JSON parsing that is used
 to get results between AWS commands.
 
-In Debian and Ubuntu distributions
+In Debian and Ubuntu Linux distributions
 ```sh
 sudo apt-get install jq
 ```
@@ -11,8 +11,9 @@ Source the AWS commands these commands are shell scripts
 that create the necessary elastic beanstalk roles, users, groups and
 elastic beanstalk permissions to your account. Well to my account right now.
 
-This is about learning what is absolutely necessary if I am starting
-with a fresh AWS account
+The scripts in `scripts/aws/iam` are about learning what is absolutely necessary
+if I am starting with a fresh AWS account and I want to deploy with Elastic
+Beanstalk to AWS.
 
 ```sh
 source ./scripts/iam/commands.sh
@@ -20,9 +21,8 @@ source ./scripts/iam/commands.sh
 
 ### Create
 aws_up
-eb create
-eb deploy
-
+scripts/aws/elasticbeanstalk/init.sh
+scripts/aws/elasticbeanstalk/create.sh
 
 ### Destroy
 Destroy all of the permissions from the AWS account to deploy. This is when you
